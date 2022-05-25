@@ -26,7 +26,7 @@ dnf install \
   cagibi \
   colord-kde \
   cups-pk-helper \
-  dolphin \
+  xfce4-terminal \
   glibc-all-langpacks \
   gnome-keyring-pam \
   kcm_systemd \
