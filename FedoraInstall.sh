@@ -17,5 +17,6 @@ dnf install NetworkManager-config-connectivity-fedora kernel-devel kernel-header
 wget https://uk.download.nvidia.com/XFree86/Linux-x86_64/510.73.05/NVIDIA-Linux-x86_64-510.73.05.run
 chmod +x ./NVIDIA-Linux-x86_64-510.73.05.run
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT.*/& modprobe.blacklist=nouveau/'  /etc/default/grub
 reboot
 fi
