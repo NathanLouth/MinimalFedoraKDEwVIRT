@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##### CHECK FOR SUDO or ROOT ##################################
 if ! [ $(id -u) = 0 ]; then
   echo "This script must be run as sudo or root, try again..."
