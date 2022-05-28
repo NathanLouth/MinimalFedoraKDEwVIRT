@@ -19,5 +19,7 @@ chmod +x ./NVIDIA-Linux-x86_64-510.73.05.run
 echo "blacklist nouveau" > /etc/modprobe.d/denylist.conf
 echo "options nouveau modeset=0" >> /etc/modprobe.d/denylist.conf
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT.*/& modprobe.blacklist=nouveau/'  /etc/default/grub
+sudo dracut --force
+grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot
 fi
