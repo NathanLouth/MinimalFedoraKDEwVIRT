@@ -5,8 +5,7 @@ if ! [ $(id -u) = 0 ]; then
   exit 1
 fi
 
-if [test -f "./NVIDIA-Linux-x86_64-510.73.05.run"]
-then
+if test -f "$FILE"; then
 ./NVIDIA-Linux-x86_64-510.73.05.run
 systemctl enable gdm
 systemctl set-default graphical.target
