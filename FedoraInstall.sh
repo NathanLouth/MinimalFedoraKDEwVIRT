@@ -20,6 +20,6 @@ echo "blacklist nouveau" > /etc/modprobe.d/denylist.conf
 echo "options nouveau modeset=0" >> /etc/modprobe.d/denylist.conf
 sed -i 's/^GRUB_CMDLINE_LINUX="[^"]*/& modprobe.blacklist=nouveau/'  /etc/default/grub
 sudo dracut --force
-grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+grub2-mkconfig -o "$(readlink -e /etc/grub2.conf)"
 reboot
 fi
