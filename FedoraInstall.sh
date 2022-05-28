@@ -18,7 +18,7 @@ wget https://uk.download.nvidia.com/XFree86/Linux-x86_64/510.73.05/NVIDIA-Linux-
 chmod +x ./NVIDIA-Linux-x86_64-510.73.05.run
 echo "blacklist nouveau" > /etc/modprobe.d/denylist.conf
 echo "options nouveau modeset=0" >> /etc/modprobe.d/denylist.conf
-sed -i 's/^GRUB_CMDLINE_LINUX="[^"]*/& rd.driver.blacklist=nouveau nvidia-drm.modeset=1/'  /etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX="[^"]*/& rd.driver.blacklist=nouveau nvidia-drm.modeset=0/'  /etc/default/grub
 sudo dracut --force
 grub2-mkconfig -o "$(readlink -e /etc/grub2.cfg)"
 reboot
